@@ -16,16 +16,14 @@ import AlarmIcon from '@mui/icons-material/Alarm';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import MAinput from './Components/MAinput';
 import MAselect from './Components/MAselect';
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
   return (
     <div className="App">
      <AppRouter />
-     <MAdatePicker Onchange={(e:any)=>{console.log(e.target.value)}}/>
-     <MAbutton Classname='bg-danger text-white'  value="Get Started" Onclick={(e:any) => {console.log(e.target.value)}}/>
-     <MAiconButton Onclick={(e:any) => {alert(e.target.value)}} value={<AddShoppingCartIcon /> }/>
-     <MAinput label='Enter' onchange={(e:any)=> console.log(e.target.value)} />
-     <MAselect Placeholder='Select' items={['ali','ahad']} classname='my-5'/>
+     {/* <MALogin/> */}
+     
     </div>
   );
 
