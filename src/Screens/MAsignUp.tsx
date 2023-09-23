@@ -4,10 +4,8 @@ import MAinput from "../Components/MAinput";
 import MAbutton from "../Components/MAbutton";
 import PersonIcon from '@mui/icons-material/Person';
 import { useEffect, useState } from "react";
-// import { SignUp } from "../config/firebaseMethods";
-import { SignUp } from "../config/Router/firebaseMethods";
+import { SignUp   } from "../config/firebaseMethods";
 import { useNavigate } from "react-router-dom";
-// import SimpleBackdrop from "../Components/MAloader";
 
 export default function MASignUp() {
     let [user, setUser] = useState<any>([])

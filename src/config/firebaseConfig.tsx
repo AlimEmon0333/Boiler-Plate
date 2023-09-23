@@ -7,11 +7,12 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
     apiKey: "AIzaSyAg2Oap_eWE08l5WqOzEGlkQ8BQwiII7S8",
     authDomain: "react-app-firebase-intigration.firebaseapp.com",
+    databaseURL: "https://react-app-firebase-intigration-default-rtdb.firebaseio.com",
     projectId: "react-app-firebase-intigration",
     storageBucket: "react-app-firebase-intigration.appspot.com",
     messagingSenderId: "1061884547220",
     appId: "1:1061884547220:web:54cc4d7cb9addd522c6481"
 };
 
-// Initialize Firebase
+// Initialize Firebase 
 export const app = initializeApp(firebaseConfig);

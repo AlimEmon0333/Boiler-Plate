@@ -7,7 +7,7 @@ import MASignup from './Screens/MAsignUp';
 import MADashboard from './Screens/MADashboard/MADashboard';
 import { Routes , Route } from "react-router-dom";
 import { Button } from '@mui/material';
-import AppRouter from './config/Router/Router';
+import AppRouter from './config/Router';
 import MAdatePicker from './Components/MAdatePicker';
 import MAbutton from './Components/MAbutton';
 import MAiconButton from './Components/MAiconButton';

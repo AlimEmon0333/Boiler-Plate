@@ -6,7 +6,8 @@ import PersonIcon from '@mui/icons-material/Person';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { Login, SignUp } from "../config/firebaseMethods";
-import { Login } from "../config/Router/firebaseMethods";
+// import { Login } from "../config/Router/firebaseMethods";
+import { Login } from "../config/firebaseMethods";
 
 export default function MALogin() {
     let [user, setUser] = useState<any>([])
@@ -22,7 +23,7 @@ export default function MALogin() {
         Login(user)
 
             .then((res: any) => {
-                navigate('/MAsignUp')
+                navigate('/MADashboard')
                 setOpen(false)
             }).catch((err: any) => {
                 alert(err)

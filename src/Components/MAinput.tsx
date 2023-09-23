@@ -9,7 +9,7 @@ type MAinput = {
 export default function MAinput(props: MAinput) {
     return (
         <>
-            <TextField className={props.className} type={props.type} id="filled-basic" label={props.label} variant="standard" onChange={props.onchange} sx={{width:"120%"}}/>
+            <TextField className={props.className} type={props.type} id="filled-basic" label={props.label} variant="standard" onChange={props.onchange} />
         </>
     )
 }
