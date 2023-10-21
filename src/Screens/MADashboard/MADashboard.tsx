@@ -39,7 +39,7 @@ interface Props {
 export default function MADashboard(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [sideNav, setSideNav] = React.useState([
+  const sideNav = [
     {
       name: "Home",
       route: "MAhome",
@@ -56,7 +56,7 @@ export default function MADashboard(props: Props) {
       route: "MAservices",
       icon: <MiscellaneousServicesIcon/>
     },
-  ]);
+  ];
   const navigate = useNavigate()
   const forRoute = (e:any) =>{
     navigate(`/MADashboard/${e}`)

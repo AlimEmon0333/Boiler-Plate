@@ -1,19 +1,13 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import MADashboard from "../Screens/MADashboard/MADashboard";
-import MALogin from "../Screens/MAlogin";
-import MASignUp from "../Screens/MAsignUp";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MAtask from "../Screens/MAtask";
 export default function AppRouter() {
     return (
         <>
-            <BrowserRouter>
+            <Router>
                 <Routes>
-                    <Route path="MAlogin" element={<MALogin />} />
-                    <Route path="MAsignUp" element={<MASignUp />} />
-                    <Route path="MADashboard/*" element={<MADashboard />} />
-                    <Route path="MAtask" element={<MAtask />} />
+                    <Route path="/" element={<MAtask/>} />
                 </Routes>
-            </BrowserRouter>
+            </Router>
         </>
     )
 }

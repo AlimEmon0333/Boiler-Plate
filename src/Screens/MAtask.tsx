@@ -1,39 +1,33 @@
 import { useState } from "react"
-import MAinput from "../Components/MAinput";
-import MAbutton from "../Components/MAbutton";
-import { Add, Get } from "../config/firebaseMethods";
+import { FBadd, FBget } from "../config/firebaseMethods";
 import { useEffect } from "react";
-import { Box, Paper, } from "@mui/material"; import AddIcon from '@mui/icons-material/Add';
-
-
-
+import { Box, Button, Paper, TextField, } from "@mui/material"; 
+import AddIcon from '@mui/icons-material/Add';
 
 export default function MAtask() {
-    let [model, setModel] = useState<any>({});
+    let [task, setTask] = useState<any>({});
     let [taskList, setTaskList] = useState<any>([]);
-    let fillMOdel = (key: any, val: any) => {
-        model[key] = val
-        setModel({ ...model })
+
+    let fillTask = (key: any, val: any) => {
+        task[key] = val
+        setTask({ ...task })
     }
     const getTasklist = () => {
-        Get('tasks')
+        FBget('tasks')
             .then((res) => {
                 setTaskList([...res])
-                console.log(res)
             }).catch((err) => {
                 console.log(err)
             })
-    }
-    const  addTask = () => {
-        Add("tasks", model)
-            .then((res) => {
-                setModel({...model})
-                getTasklist()
-                Get('tasks')
-            }).catch((err) => {
-                console.log(err)
-            })
-    }
+        }
+        const  addTasks = () => {
+            FBadd("tasks", task)
+                .then((res) => {
+                    getTasklist()
+                }).catch((err) => {
+                    console.log(err)
+                })
+        }
 
     useEffect(()=>{getTasklist()},[])
     return (
@@ -47,10 +41,10 @@ export default function MAtask() {
             <Box className="grid grid-cols-4 ">
                 <Paper className="p-10 m-5 text-center drop-shadow bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
                     <h3>Add To list</h3>
-                    <MAinput label="Task" onchange={(e: any) => { fillMOdel("Task", e.target.value) }} type="text"/>
-                    <MAinput label="Assinee" onchange={(e: any) => { fillMOdel("Assignee", e.target.value) }} type="text" />
-                    <MAinput label="Discription" onchange={(e: any) => { fillMOdel("Description", e.target.value) }} type="text" />
-                    <MAbutton Classname="bg-white text-dark mt-4" value="Add to list" endIcon={<AddIcon />} Onclick={addTask} />
+                    <TextField label="Task" onChange={(e: any) => { fillTask("Task", e.target.value) }} type="text"/>
+                    <TextField label="Assinee" onChange={(e: any) => { fillTask("Assignee", e.target.value) }} type="text" />
+                    <TextField label="Discription" onChange={(e: any) => { fillTask("Description", e.target.value) }} type="text" />
+                    <Button className="bg-white text-dark mt-4" value="Add to list" endIcon={<AddIcon />} onClick={addTasks} />
                 </Paper>
                 <Paper className="p-10 m-5 col-span-3 drop-shadow bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 ">
                     <>

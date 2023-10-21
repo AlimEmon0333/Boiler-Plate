@@ -8,14 +8,6 @@ import MADashboard from './Screens/MADashboard/MADashboard';
 import { Routes , Route } from "react-router-dom";
 import { Button } from '@mui/material';
 import AppRouter from './config/Router';
-import MAdatePicker from './Components/MAdatePicker';
-import MAbutton from './Components/MAbutton';
-import MAiconButton from './Components/MAiconButton';
-import DeleteIcon from '@mui/icons-material/Delete';
-import AlarmIcon from '@mui/icons-material/Alarm';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import MAinput from './Components/MAinput';
-import MAselect from './Components/MAselect';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
